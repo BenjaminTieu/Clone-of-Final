@@ -3,7 +3,10 @@ def user_input(phr1:str, accepted_choices: list):
     check = False
     # This while loop will force the program to run until it gets an expected value
     while check is False:
-        val = str(input(phr1 + "\n"))
+        # Include a seperator between the user input and the dialogue
+        for idx in range(len(phr1)):
+            print("-", end = "")
+        val = str(input("\n" + phr1 + "\n"))
         for val2 in accepted_choices:
             # Check if the input is a string or number
             check_string = True
@@ -19,14 +22,18 @@ def user_input(phr1:str, accepted_choices: list):
             # Check if the input is a valid number
             if check_string is False and contains_string is False:
                 if float(val) == val2:
+                    for idx in range(len(phr1)):
+                        print("-", end="")
                     print("\n", end = "")
                     return float(val)
             # Check if the input is a valid String (Capitalization is inconsequential)
             elif check_string and isinstance(val2, str):
                 if val.upper().strip() == val2.upper().strip():
-                    print("\n", end = "")
+                    for idx in range(len(phr1)):
+                        print("-", end="")
+                    print("\n", end="")
                     return val2
         print("Error. You have entered an invalid option.")
 
 def prompt1():
-    input("[Continue]\n")
+    input("\n[Continue]\n")
