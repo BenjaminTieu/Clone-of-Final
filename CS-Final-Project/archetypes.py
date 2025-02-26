@@ -1,5 +1,5 @@
-dict1 = {"Warrior": {"Health": 10, "Strength": 10, "Dexterity": 5, "Agility": 5},
-         "Thief": {"Health": 5, "Strength": 5, "Dexterity": 10, "Agility": 10}}
+dict1 = {"Warrior": {"Health": 100, "Strength": 2500, "Dexterity": 25, "Agility": 1500},
+         "Thief": {"Health": 50, "Strength": 15, "Dexterity": 50, "Agility": 50}}
 
 class Archetypes:
     # This method will initialize the attributes of the object
