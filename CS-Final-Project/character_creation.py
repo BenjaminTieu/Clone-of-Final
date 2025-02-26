@@ -12,9 +12,9 @@ class Character:
 
     # This method will return all attributes of the object when the object is printed
     def __repr__(self) -> str:
-        return ("Name: {}, Health : {}, Strength: {}, Dexterity: {}, Agility: {}, Archetype: {}"
-                .format(self.name, self.health,self.strength, self.dexterity,self. agility,
-                        self.archetype.get_name()))
+        return ("Name: {}, Archetype: {}, Health : {}, Strength: {}, Dexterity: {}, Agility: {}"
+                .format(self.name, self.archetype.get_name(), self.health,self.strength, self.dexterity,
+                        self. agility,))
 
     # Accessor methods
     def get_name(self) -> str:
