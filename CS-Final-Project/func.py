@@ -1,4 +1,4 @@
-
+# This function will ask the user for an input. If the input is not an expected value, then the user will be re-prompted
 def user_input(phr1:str, accepted_choices: list = None, confirmation: bool = False):
     check = False
     # This loop will run continuously until the user inputs a valid input
@@ -9,7 +9,6 @@ def user_input(phr1:str, accepted_choices: list = None, confirmation: bool = Fal
         # Prompt the user to input a value and remove any trailing and leading zeroes
         val = input()
         val = val.strip()
-
         for val2 in accepted_choices:
             # Check if the input is a string or number
             check_string = True
@@ -25,11 +24,6 @@ def user_input(phr1:str, accepted_choices: list = None, confirmation: bool = Fal
             # Check if the input is a valid number
             if check_string is False and contains_string is False:
                 if int(val) <= len(accepted_choices):
-<<<<<<< HEAD
-                    for idx in range(len(phr1)):
-                        print("-", end="")
-                    print("\n", end = "")
-=======
                     # Check if the code is running a confirmation() and send back the respective values
                     if confirmation is True:
                         if int(val) == 1:
@@ -38,17 +32,10 @@ def user_input(phr1:str, accepted_choices: list = None, confirmation: bool = Fal
                             return True
                     # If we are not trying to confirm a statement, print a seperator and return the value
                     seperator(phr1)
->>>>>>> a3995750f0d3d12c151bac19863aa90fa89c19cb
                     return accepted_choices[int(val)-1]
             # Check if the input is a valid String (Capitalization is inconsequential)
             elif check_string and isinstance(val2, str):
                 if val.upper().strip() == val2.upper().strip():
-<<<<<<< HEAD
-                    for idx in range(len(phr1)):
-                        print("-", end="")
-                    print("\n", end="")
-                    return val2
-=======
                     # Check if the code is running a confirmation() and send back the respective values
                     if confirmation is True:
                         if val2 == "Yes":
@@ -59,7 +46,6 @@ def user_input(phr1:str, accepted_choices: list = None, confirmation: bool = Fal
                     seperator(phr1)
                     return val2
         # If a valid input is not entered, print the following message
->>>>>>> a3995750f0d3d12c151bac19863aa90fa89c19cb
         print("Error. You have entered an invalid option.")
 
 # This function will, given a list of accepted choices, print the available options to the screens with numbers
@@ -68,12 +54,8 @@ def choices(accepted_choices: list):
     for idx in range(len(accepted_choices)):
         # Simply print the choice to the screen
         if str_to_float(accepted_choices[idx]) is None:
-<<<<<<< HEAD
-            # Capitalize the first letter of the choice if it is not capitalized
-=======
             # Capitalize the first letter of the choice if it is not capitalized and print it to the screen along with
             # an associated number
->>>>>>> a3995750f0d3d12c151bac19863aa90fa89c19cb
             if accepted_choices[idx][0].upper() != accepted_choices[idx][0]:
                 broken_phr = ""
                 first_letter = accepted_choices[idx][0].upper()
@@ -86,8 +68,6 @@ def choices(accepted_choices: list):
         else:
             print(accepted_choices[idx])
 
-<<<<<<< HEAD
-=======
 # This function will ask the user to confirm their input and reprompt the question if necessary. The function must be
 # given the following arguments: the original input, the confirmation phrase that asks the user if they are sure about
 # their input, and the question to be reprinted if the user wants to change their input.
@@ -98,9 +78,10 @@ def choices(accepted_choices: list):
 def confirm(orig_val: str, phr1_con:str, phr_reprint: str,  accepted_choices_re: list = None,
             obj_dict: dict = None) -> str:
     run_loop = True
+    phr_verification = ["Yes", "No"]
     # This loop will run until the user is certain of their choice
     while run_loop is True:
-        input_confirm = user_input(phr1_con.format(orig_val), ["Yes", "No"], True)
+        input_confirm = user_input(phr1_con.format(orig_val), phr_verification, True)
         # If the user wants to re-input a value, the code will check if any input can be provided.
         if input_confirm is True:
             if accepted_choices_re is None:
@@ -116,24 +97,19 @@ def confirm(orig_val: str, phr1_con:str, phr_reprint: str,  accepted_choices_re:
             run_loop = False
     return orig_val
 
->>>>>>> a3995750f0d3d12c151bac19863aa90fa89c19cb
 # This function will prompt the user to enter any input to continue
 def prompt1():
     input("\n[Continue]\n")
 
-<<<<<<< HEAD
-# This function
+# This function will prompt the user to enter any input to continue without printing a "continue" message
+def prompt2():
+    input()
 
-=======
->>>>>>> a3995750f0d3d12c151bac19863aa90fa89c19cb
 # This function will convert a string into a float if possible. If it is not possible, it will return None
 def str_to_float(phr1: str) -> float or None:
     try:
         return float(phr1)
     except ValueError:
-<<<<<<< HEAD
-        return None
-=======
         return None
 
 # This function will create a seperator that is the same length as its parameter
@@ -172,4 +148,3 @@ def print_stats(orig_val: str, obj_dict: dict):
                     if not main_attr == last_val:
                         print(", ", end = "")
             print("\n", end="")
->>>>>>> a3995750f0d3d12c151bac19863aa90fa89c19cb
