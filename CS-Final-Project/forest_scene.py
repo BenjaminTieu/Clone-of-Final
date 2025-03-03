@@ -1,3 +1,4 @@
+#Lukas
 import random
 import time
 import func
@@ -44,6 +45,20 @@ if opening_scene.store=="Open it" and opening_scene.store_2=="Yes, its Questin T
             print("The broken corpse of the goblin stands before you")
             print("While staring at the goblin you notice 2 things on the corpse")
             print("The goblins heavy but razor sharp blade and also the goblins surprisingly light but thinner armor")
+            stat_boost_1=func.user_input("You notice you can only  carry one, which do you take",["The sword (+10 strength)","The boots (+10 dexterity)"])
+            if stat_boost_1=="The sword (+10 strength)":
+                new_strength=main.character1.get_strength()+10
+                main.character1.set_strength(new_strength)
+            else:
+                new_dexterity=main.character1.get_dexterity()+10
+                main.character1.set_dexterity(new_dexterity)
+            print("After your near death encounter with the goblin you realize that maybe you should be walking through the")
+            print("DARK EVIL FOREST OF DOOM")
+            print("all by yourself, so you quickly hurry to Mustang Village!")
+
+
+
+
 
 
 

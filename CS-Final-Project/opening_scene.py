@@ -1,3 +1,4 @@
+#Lukas
 import random
 import time
 import func
@@ -7,6 +8,7 @@ import character_creation
 import enemy_creation
 import archetypes
 import main
+starting_health=main.character1.get_health()
 print(art_archive.hut())
 print("You are sitting in your hut one day.")
 print("When all of a sudden you receive a letter...")
