@@ -118,33 +118,41 @@ def seperator(phr1:str):
         print("-", end="")
     print("\n", end="")
 
-# This function will print the attributes associated with the embedded dictionary in such a way that the name of the
-# item is printed first, the description is printed next (if provided), and the stats of the item are printed last
-def print_stats(orig_val: str, obj_dict: dict):
+# This function will search through obj_dict until it finds a key that matches orig_val.
+#   Then, it will print all the attributes associated with they key in a formatted way.
+# Usage of all arguments:
+#       orig_val: A string that stores the user's choice
+#       obj_dict: A dictionary filled with the attributes of every object in a created class
+#                   or to be used in a specific scenario.
+# This function has no return value
+def print_stats(orig_val: str, obj_dict: dict) -> None:
     last_val = ""
     # Run a loop for each key in the dictionary
     for key in obj_dict:
-        # Check if the key matches the value provided by the user so that the code knows which
-        # attributes it should print
-        if key == orig_val:
+        if key.upper() == orig_val.upper():
             print("You have chosen: ")
-            # This loop will check each key in the embedded dictionary and if the value of the embedded dictionary
-            # matches the user's input, then it will be printed to the screen. If a "Description" key exists in the
-            # embedded dictionary, then it will also be printed to the screen.
+            # This loop will check each key in the embedded dictionary and if the value of the
+            #   embedded dictionary matches the user's input, then it will be printed to the screen.
+            #   If a "Description" key exists in the embedded dictionary, then it will also be printed
+            #   to the screen.
             for val in obj_dict[key]:
-                last_val = val
-                if obj_dict[key][val] == orig_val:
-                    print(val + ":", end=" ")
-                    print(obj_dict[key][val])
-                    if obj_dict[key].get("Description") is not None:
-                        print("\n" + "Description" + ":")
-                        print(obj_dict[key]["Description"] + "\n")
+                not_stat = False
+                if str_to_float(obj_dict[key][val]) is None:
+                    not_stat = True
+                    if obj_dict[key][val].upper() == orig_val.upper():
+                        print(val + ":", end=" ")
+                        print(obj_dict[key][val])
+                        if obj_dict[key].get("Description") is not None:
+                            print("\n" + "Description" + ":")
+                            print(obj_dict[key]["Description"] + "\n")
+                if not_stat is False:
+                    last_val = val
             # This loop will check each key in the embedded dictionary and print
-            # the missing attributes to the screen
+            #   the missing attributes to the screen
             for main_attr in obj_dict[key]:
                 if main_attr != "Description" and obj_dict[key][main_attr] != orig_val:
                     print(main_attr + ":", end=" ")
                     print(obj_dict[key][main_attr], end="")
                     if not main_attr == last_val:
-                        print(", ", end = "")
+                        print(", ", end="")
             print("\n", end="")
