@@ -68,9 +68,10 @@ if opening_scene.store=="Open it" and opening_scene.store_2=="Yes, it's Questin'
                 opening_scene.starting_health = new_health = main.character1.get_health()+20
                 main.character1.set_agility(new_agility)
 
-            print("After your near death encounter with the goblin you realize that maybe you should be walking through the")
+            print("After your near death encounter with the goblin you realize that")
+            print("maybe you shouldn't be walking through the ")
             print("DARK EVIL FOREST OF DOOM")
-            print("all by yourself, so you quickly hurry to Mustang Village!")
+            print("all by yourself, so you quickly hurry to Mustang Village.")
 
 
 
@@ -81,6 +82,6 @@ if opening_scene.store=="Open it" and opening_scene.store_2=="Yes, it's Questin'
 
     else:
         print("Your inner cowardice reveals itself,")
-        print("but you are filled with an anticipation to watch paint dry")
+        print("but you are filled with an unyielding desire to watch paint dry")
         print("and lead a very unfulfilling life...")
 
