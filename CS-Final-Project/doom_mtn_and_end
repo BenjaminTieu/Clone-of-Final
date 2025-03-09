@@ -1,0 +1,69 @@
+import random
+import sys
+import time
+import func
+import opening_scene
+import battle_functions
+import art_archive
+import character_creation
+import enemy_creation
+import archetypes
+import main
+import forest_scene
+import mustang_village
+
+skeleton=enemy_creation.Enemy("Skeleton",10,10,10,10)
+commander_skeleton=enemy_creation.Enemy("Skeleton",10,10,10,10)
+if mustang_village.store_8=="I long for a warm meal, surely the princess can wait a few more hours to be saved":
+    print("you start your descent up the mtn some time later but your belly is filled and you are ready to save the princess")
+    new_hp=main.character1.get_health()
+    print(main.character1.get_health())
+    print("You are thinking about what you will do once you save the princess when a living skeleton appears infront of you")
+    print("It imediately tries to attack you!")
+    print("You notice the skeleton is relatively slow and brittle")
+    battle_functions.combat_loop(main.character1,skeleton)
+    print("that was easy you tell yourself")
+    print("When suddenly...")
+    print("to your suprise there is now another Skeleton!!")
+    battle_functions.combat_loop(main.character1, skeleton)
+    print("'Two enemies in one level that is unheard of' you tell yourself")
+    print("and then")
+    print("there is another skeleton")
+    print("you start to get annoyed")
+    battle_functions.combat_loop(main.character1, skeleton)
+    print("after your encounter with the last skeleton you get to a clearing and see a clear up to DOOM CASTLE")
+    print("And in horror you realize there are about 10000 other skeletons waiting for you up that path")
+    store11=func.user_input("Should you fight through all 10000 skeletons or attempt to sneak past them",["Fight through(STRENGTH)","Attempt to sneak past(AGILITY)"])
+    if store11=="Fight through":
+        if battle_functions.percent_chance(main.character1.get_strength()) is True:
+            print("You a skillful warrior after a grueling 10 hours latter mow through all 10000 skeletons")
+            print("You are now at the base of the castle")
+        else:
+            new_hp=int(main.character1.get_health()*.60)
+            main.character1.set_health(new_hp)
+            print("You barely manage to get past the skeleton horde and to the base of the castle, that was a mistake")
+            print("You are now very wounded")
+    else:
+        if battle_functions.percent_chance(main.character1.get_dexterity()) is True:
+            print("You sneak past the skeleton horde like the ninja you are to the base of the castle!")
+        else:
+            new_hp = int(main.character1.get_health() * .70)
+            main.character1.set_health(new_hp)
+            print("While sneaking past the horde you acidentaly trip yourself and fall dead in the center of it")
+            print("You barely manage to make it to the base of the castle")
+            print("You are now terribily wounded")
+    print("At the base you spot a important looking skeleton")
+    store12=func.user_input("should you attack the important looking skeleton?",["Attack","Ignore and sneak into the castle"])
+    if store12=="Attack":
+
+
+
+
+
+else:
+    print("Due to not visiting the tavern in mustang village the descent was deadly!")
+    print("Due to not eating anything for pretty much the entire you collapse from sheer exhaustion and starvation")
+    print("Your final thoughts on this earth is how much you longed for some beans....")
+    print(art_archive.player_death_img())
+    sys.exit()
+
