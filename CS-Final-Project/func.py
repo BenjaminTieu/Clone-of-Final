@@ -159,4 +159,3 @@ def print_stats(orig_val: str, obj_dict: dict) -> None:
                 else:
                     print(l2[idx][0] + ":", l2[idx][1], end = "")
                     print(", ", end = "")
-            break # Save memory by breaking the loop once the user input is matched to a key
