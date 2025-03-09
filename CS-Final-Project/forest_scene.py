@@ -14,40 +14,42 @@ import stor
 goblin=enemy_creation.Enemy("goblin",30,20,20,20)
 if opening_scene.store=="Open it" and opening_scene.store_2=="Yes, it's Questin' Time!!!":
     print(art_archive.forest())
-    print("You reach the base of dark evil forest.")
+    print("You reach the entrance of the DARK EVIL FOREST.")
     print("On the other side of the DARK EVIL FOREST is Polylandia's capital, Mustang Village.")
-    print("You start to have second thoughts of going through.")
+    print("You start to have second thoughts about going through.")
     print("After all, there is nothing wrong with watching paint dry.")
     store_3=func.user_input("Do you want to go through the DARK EVIL forest or return back home?", stor.forest_scene_l1)
     if store_3=="Go through the DARK EVIL FOREST":
-        print("You overcome your momentary cowardice and venture deeper into the forest")
+        print("You overcome your momentary cowardice and venture deeper into the forest.")
         print(art_archive.time_passed())
-        print("While you are casaully walking through the DARK EVIL FOREST")
-        print("you oddly enough start to hear strange ominous sounds coming from the bushes")
-        store_4=func.user_input("you oddly enough start to hear strange ominous sounds coming from the bushes",stor.forest_scene_l2)
+        print("While you are casually strolling along the DARK EVIL FOREST,")
+        print("the bushes start to rustle and you hear strange noises coming from them.")
+        store_4=func.user_input("What do you choose to do?",stor.forest_scene_l2)
         if store_4=="Investigate the bushes":
-            print("Inspecting the bushes reveals a crouching goblin who was waiting to ambush you")
-            print("You notice that while the goblin is weak he is very quick")
+            print("As you near the bushes, you notice a dark green figure hidden between the leaves.")
+            print("You recognize this creature as a goblin! It was likely hiding in the bushes to ambush you!")
+            print("The goblin is not strong but it is very quick.")
             print(art_archive.goblin())
-            print("the goblin immediately attacks you")
-            battle_functions.combat_loop(main.character1,goblin)
+            print("The goblin immediately attacks you!")
 
-        if store_4=="ignore it":
-
-            print("You walk past the ominous sounding bush, probably a bunny you tell yourself")
-            print("just as you think that a goblin leaps out of the bushes and slashes you across the torso")
+        if store_4=="Ignore it":
+            print("You walk past the ominous sounding bush, \"Probably a bunny,\" you tell yourself.")
+            print("Suddenly, a goblin leaps out of the bushes and slashes you across the torso!")
             print(art_archive.goblin())
             health_ambush=int((main.character1.get_health())/4)
             main.character1.set_health(health_ambush)
-            print("you are severely wounded from the surprise attack your health is now only",health_ambush)
-            battle_functions.combat_loop(main.character1, goblin)
+            print("You are severely wounded from the surprise attack. Your health is now only",health_ambush)
+
+        battle_functions.combat_loop(main.character1, goblin)
+        func.prompt1()
+
         if goblin.get_health()==-10000:
             print("You successfully escaped the crafty goblin")
-            print("after escaping the goblin you decide that you might as well keep on running all the way to Mustang Village")
+            print("After escaping the goblin, you decide that you might as well keep on running all the way to Mustang Village.")
         if goblin.get_health() == 0:
-            print("The broken corpse of the goblin stands before you")
-            print("While staring at the goblin you notice 2 things on the corpse")
-            print("The goblins razor sharp blade and also the goblins surprisingly light but thinner armor")
+            print("The broken corpse of the goblin stands before you.")
+            print("While staring at the goblin, you notice 2 items on its corpse.")
+            print("The goblin's razor sharp blade and also the goblins surprisingly light but thin armor.")
             stat_boost_1 = func.user_input("You notice you can only carry one, which do you take?",stor.forest_scene_l3)
             stat_boost_1 = func.confirm(stat_boost_1, "Are you sure you want to choose the [{}]?",
                                         "Which item do you want to keep?",
