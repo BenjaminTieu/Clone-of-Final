@@ -20,7 +20,7 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
     print("You suspect DARK LORD JOE MAMA and the princess are up in that castle")
     func.prompt1()
     print("An old man approaches you from one of the empty houses")
-    time.sleep(0.5)
+    time.sleep(1)
     store_7=func.user_input("Hello traveller have you come to save the kingdom and the princess from the dark lord JOE MAMA?", stor.mustang_village_l1)
     if store_7=="Yes, I am here to depose the tyrant":
         print("Then I must warn you, traveler. DARK LORD JOE MAMA has sent one of his allies, CAPTAIN ARMSTRONG, into town.")
