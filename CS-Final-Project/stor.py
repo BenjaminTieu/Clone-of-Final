@@ -53,13 +53,13 @@ mustang_village_l2 = ["I long for a warm meal, surely the princess can wait a fe
                       "Time is of the essence, I must continue on my quest."]
 mustang_village_l3 = ["STEW","FISH"]
 mustang_village_l4 = ["Of course! Come here little dude", "No, get away from me you flea-stained rodent",
-                      "SLAY THE MISCREANT!"]
+                      "Slay the adorable creature?"]
 # These are the dictionaries that will be used in mustang_village
 mustang_village_dict1 = {"STEW": {"Name": "STEW",
                                   "Description": "A mystery concoction prepared by the innkeeper himself.\n"
                                                  "The menu doesn't tell you much except that it includes a...\n"
-                                                 "mushroom with a red cap and white spots? It's reminiscent of a "
-                                                 "certain power-up from a game you played long ago, but it's best"
+                                                 "mushroom with a red cap and white spots? It's reminiscent of a \n"
+                                                 "certain power-up from a game you played long ago, but it's best\n"
                                                  "not to take your chances."},
                          "FISH": {"Name": "FISH",
                                   "Description": "A fish prepared by the innkeeper himself. Strange, I \n"
