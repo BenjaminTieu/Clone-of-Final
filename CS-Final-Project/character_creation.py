@@ -13,7 +13,7 @@ class Character:
     # This method will return all attributes of the object when the object is printed
     def __repr__(self) -> str:
         return ("Name: {}, Archetype: {}, Health : {}, Strength: {}, Dexterity: {}, Agility: {}"
-                .format(self.name, self.archetype.get_name(), self.health,self.strength, self.dexterity,
+                .format(self.name, self.archetype.get_archetype(), self.health,self.strength, self.dexterity,
                         self. agility,))
 
     # Accessor methods
@@ -28,7 +28,7 @@ class Character:
     def get_agility(self) -> int:
         return self.agility
     def get_archetype(self) -> str:
-        return self.archetype.get_name()
+        return self.archetype.get_archetype()
 
     # Mutator Methods
     def set_name(self, name: str) -> None:
