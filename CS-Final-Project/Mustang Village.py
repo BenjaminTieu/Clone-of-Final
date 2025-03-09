@@ -30,7 +30,6 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
         print("Fine, you ingrate.")
         print("I hope the dark lord eats your organs for breakfast.")
     print("The old man runs back into the house.")
-    time.sleep(0.5)
     print("You start to walk deeper into the ghost town but THEN......")
     func.prompt1()
     print("Your stomach rumbles")
@@ -40,14 +39,13 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
     store_8=func.user_input("Should you go to the tavern for a warm meal or continue on your journey?",stor.mustang_village_l2)
     if store_8=="I long for a warm meal, surely the princess can wait a few more hours to be saved":
         print("You enter the tavern.")
-        time.sleep(0.5)
         print("You are greeted with the strong smell of fish and cat fur, but also a warmth that you haven't felt since you left your hut ")
         print("A tired man with a generous belly who stands at the center of the tavern takes notice of your presence.")
         print("Welcome to Mustangs Village's one and only Tavern, what can I do for you?")
         print("The innkeeper hands you a wooden board, you notice it is actually a menu")
         store_9=func.user_input("What should you get?",stor.mustang_village_l3)
         store_9 = func.confirm(store_9, "Are you sure you want to choose the [{}]?",
-                               "What should you get?", stor.mustang_village_dict1)
+                               "What should you get?", stor.mustang_village_l3, stor.mustang_village_dict1)
         time.sleep(1)
         print("After some time, you get your meal")
         if store_9=="STEW":
