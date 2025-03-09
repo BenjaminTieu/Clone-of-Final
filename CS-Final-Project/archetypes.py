@@ -1,11 +1,5 @@
-
-dict1 = {"Warrior": {"Archetype": "Warrior",
-                      "Description": "A brawler archetype with a focus on getting up-close and personal",
-                      "Health": 10, "Strength": 10, "Dexterity": 5, "Agility": 5},
-         "Thief": {"Archetype": "Thief",
-                    "Description": "A sneaky and nimble class that runs circles around its enemies",
-                    "Health": 5, "Strength": 5, "Dexterity": 10, "Agility": 10}}
-
+import stor
+dict1 = stor.archetype_dict
 
 class Archetypes:
     # This method will initialize the attributes of the object
@@ -25,7 +19,7 @@ class Archetypes:
                 .format(self.archetype, self.description, self.health, self.strength, self.dexterity, self.agility))
 
     # Accessor Methods
-    def get_name(self) -> str:
+    def get_archetype(self) -> str:
         return self.archetype
     def get_description(self) -> str:
         return self.description
@@ -37,4 +31,16 @@ class Archetypes:
         return self.dexterity
     def get_agility(self) -> int:
         return self.agility
+
+    # Mutator Methods
+    def set_name(self, archetype: str) -> None:
+        self.archetype = archetype
+    def set_health(self, health: int) -> None:
+        self.health = health
+    def set_strength(self, strength: int) -> None:
+        self.strength = strength
+    def set_dexterity(self, dexterity: int) -> None:
+        self.dexterity = dexterity
+    def set_agility(self, agility: int) -> None:
+        self.agility = agility
 
