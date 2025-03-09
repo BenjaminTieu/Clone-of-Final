@@ -23,7 +23,7 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
         print("I dont know who they are or how they look but they uses deceit to kill any who oppose JOE MAMA")
         print("Be on guard traveller, I wish you luck!")
     else:
-        print("Fine")
+        print("Fine you ingrateful brat")
     print("The old man runs back into the house")
     print("you start to walk deeper into the ghost town but THEN......")
     print("your stomach rumbles")
@@ -49,6 +49,7 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
             print("you will remember this meal for a very long time!")
             gain_health=main.character1.get_health()+10
             main.character1.set_health(gain_health)
+        updated_health=main.character1.get_health()
         print("While eating your meal a adorable house cat curiously walks up to you")
         print("it is probably the most adorable thing you have ever seen in your entire life")
         print("The car walks up sheepishly to your leg and starts meowing at you almost asking for you to pet him")
@@ -69,13 +70,13 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
             print("Why you little shit, No one ever disrespects Captain Armstrong!")
             print("I will shred you into peices and inform JOE MAMA about your pitiful death")
         else:
-            print("You draw your weapon and proceed to slash the")
-            print("Adorable,")
-            print("Cute,")
-            print("Sweet Cat")
-            print("The cat shrieks in pain and hastily backs away from you")
+            print("You draw your weapon and swing it the innocent cat")
+            print("Guilt immediately overcomes, why would you ever harm such a magestic creature")
+            print("You realize that you are a monster, a pyschopath, a VILLIAN")
+            print("Your truly are the scum of the earth!")
+            print("The cat wimpers in pain and hastily backs away from you")
             print("Why you pyschopath, how dare you attack me!")
-            print("I,Captain Armstrong was planning on mauling you and you foiled my plans")
+            print("I,Captain Armstrong was planning on mauling you and you foiled my plans!!!")
             print("While i appreciate a fellow pyschopath, I must kill you as there is only enough space for 1 pyschopath in mustang village!")
             print("You notice the cat is now limping after you intial attack")
             wound_enemy=int(cpt_arm.get_health()/4)
@@ -91,13 +92,31 @@ if forest_scene.store_3=="Go through the DARK EVIL FOREST":
             print("The innkeeper walks over to you")
             print("Thank you for saving my establishment from that fiend, he had kept murdering my all my customers")
             print("As a reward for accomplishments please take one of my valuables!!")
-            store_11=func.user_input("What should you take",["The HEAVY ARMOR (+40 Health,+25 strength, -25 Agility)","The Light Armor (+10 Health, +20 Agility,"])
-            if store_11=="The HEAVY ARMOR (+40 Health,+25 strength, -25 Agility_":
-                main.character1.set_health(opening_scene.starting_health)
+            store_11=func.user_input("What should you take",["The HEAVY ARMOR (+40 Health,+25 strength,-25 Agility)","The Light Armor (+10 Health, +20 Agility,"])
+            if store_11=="The HEAVY ARMOR (+40 Health,+25 strength,-25 Agility)":
+                main.character1.set_health(updated_health)
                 health_up=main.character1.get_health()+50
                 main.character1.set_health(health_up)
                 strength_up=main.character1.get_strength()+25
-                st
+                main.character1.set_strength(strength_up)
+                dec_agil=main.character1.get_agility()-25
+                main.character1.set_agility(dec_agil)
+                print("the armor's weight restricts your movements but gives you also a newfound strength")
+            else:
+                main.character1.set_health(updated_health)
+                health_up = main.character1.get_health() + 10
+                main.character1.set_health(health_up)
+                inc_agil = main.character1.get_agility() + 25
+                main.character1.set_agility(inc_agil)
+                print("The suprisingly light armor provides a little bit of extra protection while still being very flexible!")
+            end_of_Mustang_Village_health=main.character1.get_health()
+            print(main.character1.get_health())
+            print("after your encounter in the tavern you decide it is best to continue your journey and save the princess")
+            print("you now much climb")
+            print("DOOM MOUNTAIN")
+        else:
+            print("You barely are able to escape from the fericous feline, you hightail it out of the tavern")
+            print("and keep running till DOOM MOUNTAIN")
 
     else:
         print("You leave Mustang Village tired and hungry yet determined to save the princess")
